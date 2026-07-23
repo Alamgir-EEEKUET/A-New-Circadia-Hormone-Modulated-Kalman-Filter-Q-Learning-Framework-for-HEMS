@@ -145,20 +145,19 @@ Full per-seed values and all results are in `results_log.txt`.
 
 ## Licence
 
-Data files (`solar.csv`, `price.csv`): subject to PJM terms of use.  
-Code files: MIT Licence.
+Code in this repository is released under CC BY 4.0 (see LICENSE). Data files (`solar.csv`, `price.csv`): subject to PJM terms of use. 
 
 ---
 
 ## Citation
 
-```bibtex
-@article{hossain2025kfql,
-  author  = {Hossain, Md. Alamgir and Shahjahan, Md.},
-  title   = {A Circadian Hormone-Modulated {Kalman} Filter {Q}-Learning
-             Framework for Home Energy Management Systems},
-  journal = {IEEE Access},
-  year    = {2025},
-  doi     = {10.1109/ACCESS.2024.0429000}
-}
+If you use this code or data, please cite:
+
 ```
+[Full citation to be added upon publication]
+```
+
+## Contact
+
+Md. Alamgir Hossain — mah@eee.kuet.ac.bd
+Dept. of EEE, Khulna University of Engineering & Technology, Bangladesh
