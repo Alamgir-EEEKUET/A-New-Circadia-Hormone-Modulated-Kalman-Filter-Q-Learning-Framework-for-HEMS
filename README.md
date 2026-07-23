@@ -68,7 +68,7 @@ Six biologically-inspired circadian hormone signals are implemented in `hormone_
 - `M_pk` — Pharmacokinetic: `(D/V)·(ka/(ka−ke))·(exp(−ke·t)−exp(−ka·t))`, D=V=ka=1.0, ke=0.3 h⁻¹
 
 **Cortisol (3 models):**
-- `C_cos` — Cosine circadian: `0.5 + 0.5·cos(2π(t−8)/24)`, peak at 08:00 h
+- `C_cos` — Cosine circadian: `0.6 + 0.4·cos(2π(t−8)/24)`, peak at 08:00 h
 - `C_pulse` — Pulsatile: sum of decaying pulses at t = {6, 10, 15, 20} h, amplitudes {1.0, 0.6, 0.5, 0.3}, k = 1.5 h⁻¹
 - `C_car` — Cortisol Awakening Response (Gaussian): `exp(−(t−8)²/(2·2²))`, peak at 08:00 h
 
