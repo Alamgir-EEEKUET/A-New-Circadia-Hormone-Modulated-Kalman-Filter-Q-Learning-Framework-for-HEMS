@@ -1,7 +1,5 @@
 # Circadian Hormone-Modulated Kalman Filter Q-Learning for Home Energy Management
 
-[![DOI](https://zenodo.org/badge/DOI/10.XXXX/zenodo.XXXXXXX.svg)](https://doi.org/10.XXXX/zenodo.XXXXXXX)
-
 **Paper:** "A Circadian Hormone-Modulated Kalman Filter Q-Learning Framework for Home Energy Management Systems"  
 **Authors:** Md. Alamgir Hossain and Md. Shahjahan  
 **Affiliation:** Department of Electrical and Electronic Engineering, Khulna University of Engineering & Technology (KUET), Bangladesh  
