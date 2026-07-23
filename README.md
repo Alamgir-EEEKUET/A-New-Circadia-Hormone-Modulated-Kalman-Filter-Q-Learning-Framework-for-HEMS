@@ -7,9 +7,8 @@
 **Manuscript ID:** Access-2025-52365
 
 DOI
-10.5281/zenodo.21510300
+[10.5281/zenodo.21510300](https://doi.org/10.5281/zenodo.21510321)
 
-<a href="https://doi.org/10.5281/zenodo.21510299"><img src="https://zenodo.org/badge/1309907179.svg" alt="DOI"></a>
 
 ## Repository Contents
 
