@@ -1,0 +1,157 @@
+=== 24-Hour Total Power Consumption per Agent (kWh) — Naive (No DR, No Hormone, Battery=0) ===
+       REF:    12.00 kWh
+       AC1:    33.60 kWh
+       AC2:    33.60 kWh
+    Heater:    36.00 kWh
+        L1:    14.40 kWh
+        L2:    14.40 kWh
+        WM:    16.80 kWh
+        DW:     7.20 kWh
+   Battery:     0.00 kWh
+     TOTAL:   168.00 kWh
+
+=== SARSA (multi-seed mean ± std) ===
+    REF:  12.00 ±  0.00 kWh
+    AC1:  15.56 ±  0.10 kWh
+    AC2:  15.66 ±  0.08 kWh
+ Heater:  15.39 ±  0.04 kWh
+     L1:   6.52 ±  0.03 kWh
+     L2:   6.59 ±  0.02 kWh
+     WM:   3.16 ±  0.02 kWh
+     DW:   1.12 ±  0.00 kWh
+Battery:  11.79 ±  0.02 kWh
+      TOTAL (All Appliances):  87.79 ± 0.18 kWh
+           TOTAL Grid Import:  30.28 ± 0.14 kWh
+
+=== KFQL (No Hormone) (multi-seed mean ± std) ===
+    REF:  12.00 ±  0.00 kWh
+    AC1:  15.75 ±  0.06 kWh
+    AC2:  15.81 ±  0.11 kWh
+ Heater:  15.39 ±  0.04 kWh
+     L1:   6.48 ±  0.01 kWh
+     L2:   6.48 ±  0.01 kWh
+     WM:   3.33 ±  0.01 kWh
+     DW:   1.12 ±  0.00 kWh
+Battery:  11.79 ±  0.01 kWh
+      TOTAL (All Appliances):  88.15 ± 0.14 kWh
+           TOTAL Grid Import:  30.54 ± 0.05 kWh
+
+=== KFQL (Time Weight) (multi-seed mean ± std) ===
+    REF:  12.00 ±  0.00 kWh
+    AC1:  16.11 ±  0.11 kWh
+    AC2:  16.11 ±  0.09 kWh
+ Heater:  15.75 ±  0.09 kWh
+     L1:   6.71 ±  0.04 kWh
+     L2:   6.66 ±  0.02 kWh
+     WM:   3.33 ±  0.01 kWh
+     DW:   1.13 ±  0.00 kWh
+Battery:  11.83 ±  0.01 kWh
+      TOTAL (All Appliances):  89.63 ± 0.19 kWh
+           TOTAL Grid Import:  29.58 ± 0.06 kWh
+
+=== Non-RL Baselines (multi-seed mean ± std) ===
+Rule (PV+Price)       : Total 106.38 ± 0.00 | Import 22.10 ± 0.00 | Runtime 8.69 ± 0.11
+ToU (WM/DW sched)     : Total 103.58 ± 0.00 | Import 23.60 ± 0.00 | Runtime 9.38 ± 0.08
+
+
+================ Multi-seed Summary (mean ± std) ================
+N seeds = 10
+Variant                     | Total (kWh)           | Grid Import (kWh)      | Runtime (s)
+------------------------------------------------------------------------------------------
+KFQL (none)                 | 88.15 ± 0.14     | 30.54 ± 0.05     | 20.56 ± 0.12
+KFQL (time weights)         | 89.63 ± 0.19     | 29.58 ± 0.06     | 20.69 ± 0.21
+Non-RL Rule PV+Price        | 106.38 ± 0.00     | 22.10 ± 0.00     | 8.69 ± 0.11
+Non-RL ToU                  | 103.58 ± 0.00     | 23.60 ± 0.00     | 9.38 ± 0.08
+==========================================================================================
+
+=== Hormone Model Effects (multi-seed mean ± std) on Total Daily Power and Savings vs KFQL (No Hormone) ===
+Mel=cos  | Cor=cos   -> DR With Hormone:  86.67 ± 0.11 kWh | Grid Import:  28.16 ± 0.02 |Saving vs NoHorm:   1.47 ± 0.21 kWh ( 1.67 ± 0.23%) | Saving vs SARSA:   1.11 ± 0.22 kWh | ( 1.27 ± 0.25%) 
+Mel=cos  | Cor=pulse -> DR With Hormone:  86.20 ± 0.16 kWh | Grid Import:  28.24 ± 0.04 |Saving vs NoHorm:   1.95 ± 0.16 kWh ( 2.21 ± 0.17%) | Saving vs SARSA:   1.59 ± 0.15 kWh | ( 1.81 ± 0.17%) 
+Mel=cos  | Cor=car   -> DR With Hormone:  86.02 ± 0.10 kWh | Grid Import:  28.13 ± 0.04 |Saving vs NoHorm:   2.12 ± 0.20 kWh ( 2.41 ± 0.22%) | Saving vs SARSA:   1.76 ± 0.21 kWh | ( 2.01 ± 0.24%) 
+Mel=ld   | Cor=cos   -> DR With Hormone:  87.26 ± 0.17 kWh | Grid Import:  28.73 ± 0.03 |Saving vs NoHorm:   0.88 ± 0.27 kWh ( 1.00 ± 0.31%) | Saving vs SARSA:   0.52 ± 0.29 kWh | ( 0.59 ± 0.33%) 
+Mel=ld   | Cor=pulse -> DR With Hormone:  86.63 ± 0.19 kWh | Grid Import:  28.69 ± 0.04 |Saving vs NoHorm:   1.51 ± 0.18 kWh ( 1.71 ± 0.20%) | Saving vs SARSA:   1.15 ± 0.24 kWh | ( 1.31 ± 0.27%) 
+Mel=ld   | Cor=car   -> DR With Hormone:  86.56 ± 0.09 kWh | Grid Import:  28.68 ± 0.02 |Saving vs NoHorm:   1.59 ± 0.13 kWh ( 1.80 ± 0.14%) | Saving vs SARSA:   1.23 ± 0.13 kWh | ( 1.40 ± 0.15%) 
+Mel=pk   | Cor=cos   -> DR With Hormone:  88.47 ± 0.11 kWh | Grid Import:  29.94 ± 0.04 |Saving vs NoHorm:  -0.32 ± 0.10 kWh (-0.36 ± 0.11%) | Saving vs SARSA:  -0.68 ± 0.18 kWh | (-0.77 ± 0.21%) 
+Mel=pk   | Cor=pulse -> DR With Hormone:  87.84 ± 0.19 kWh | Grid Import:  29.92 ± 0.03 |Saving vs NoHorm:   0.30 ± 0.24 kWh ( 0.34 ± 0.27%) | Saving vs SARSA:  -0.06 ± 0.22 kWh | (-0.07 ± 0.25%) 
+Mel=pk   | Cor=car   -> DR With Hormone:  87.82 ± 0.10 kWh | Grid Import:  29.95 ± 0.05 |Saving vs NoHorm:   0.33 ± 0.09 kWh ( 0.37 ± 0.11%) | Saving vs SARSA:  -0.03 ± 0.15 kWh | (-0.04 ± 0.17%) 
+
+========================================
+Representative Seed = 2
+Median Total Energy = 86.03 kWh
+Seed Total Energy   = 86.04 kWh
+========================================
+
+
+=== Best Hormone Model Combo by Mean Saving (multi-seed) ===
+Melatonin=cos, Cortisol=car -> With Hormone: 86.02 ± 0.10 kWh | Saving: 2.12 ± 0.20 kWh (2.41 ± 0.22%)
+
+=== 24-Hour Total Power Consumption per Agent (kWh): Naive vs KFQL (No Hormone) vs Best Hormone (mean) ===
+REF
+ Naive (No DR)                         : 12.00 kWh
+ KFQL without Hormone (mean ± std)     : 12.00 ± 0.00 kWh
+ Best Hormone (cos/car) (mean ± std): 12.00 ± 0.00 kWh
+
+AC1
+ Naive (No DR)                         : 33.60 kWh
+ KFQL without Hormone (mean ± std)     : 15.75 ± 0.06 kWh
+ Best Hormone (cos/car) (mean ± std): 15.46 ± 0.06 kWh
+
+AC2
+ Naive (No DR)                         : 33.60 kWh
+ KFQL without Hormone (mean ± std)     : 15.81 ± 0.11 kWh
+ Best Hormone (cos/car) (mean ± std): 15.46 ± 0.07 kWh
+
+Heater
+ Naive (No DR)                         : 36.00 kWh
+ KFQL without Hormone (mean ± std)     : 15.39 ± 0.04 kWh
+ Best Hormone (cos/car) (mean ± std): 14.61 ± 0.04 kWh
+
+L1
+ Naive (No DR)                         : 14.40 kWh
+ KFQL without Hormone (mean ± std)     : 6.48 ± 0.01 kWh
+ Best Hormone (cos/car) (mean ± std): 6.12 ± 0.02 kWh
+
+L2
+ Naive (No DR)                         : 14.40 kWh
+ KFQL without Hormone (mean ± std)     : 6.48 ± 0.01 kWh
+ Best Hormone (cos/car) (mean ± std): 6.14 ± 0.01 kWh
+
+WM
+ Naive (No DR)                         : 16.80 kWh
+ KFQL without Hormone (mean ± std)     : 3.33 ± 0.01 kWh
+ Best Hormone (cos/car) (mean ± std): 3.32 ± 0.01 kWh
+
+DW
+ Naive (No DR)                         : 7.20 kWh
+ KFQL without Hormone (mean ± std)     : 1.12 ± 0.00 kWh
+ Best Hormone (cos/car) (mean ± std): 1.13 ± 0.00 kWh
+
+Battery
+ Naive (No DR)                         : 0.00 kWh
+ KFQL without Hormone (mean ± std)     : 11.79 ± 0.01 kWh
+ Best Hormone (cos/car) (mean ± std): 11.78 ± 0.01 kWh
+
+=== Total Power Consumption (mean ± std) ===
+Naive (No DR)                               : 168.00 kWh
+KFQL without Hormone                        : 88.15 ± 0.14 kWh
+KFQL with Time Weight                       : 89.63 ± 0.19 kWh
+Non-RL Rule PV+Price                        : 106.38 ± 0.00 kWh
+Non-RL ToU                                  : 103.58 ± 0.00 kWh
+Best Hormone (cos/car)  : 86.02 ± 0.10 kWh
+Saving vs KFQL (No Hormone)                 : 2.12 ± 0.20 kWh
+
+============================================================
+WILCOXON TEST: Mel=cos, Cor=car  vs  KFQL (none)
+============================================================
+Per-seed KFQL-none : [88.096, 87.988, 88.295, 88.267, 88.198, 87.829, 88.202, 88.21, 88.225, 88.15]
+Per-seed Hormone   : [86.143, 86.091, 86.042, 85.877, 85.993, 86.027, 86.05, 85.996, 85.856, 86.153]
+Per-seed diffs     : [1.953, 1.897, 2.254, 2.39, 2.205, 1.802, 2.152, 2.214, 2.369, 1.997]
+All positive?      : True
+W-statistic        : 55.0
+z-score            : 2.8031
+p-value            : 0.000977  (p < 0.001)
+Effect size r      : 0.8864  (large effect)
+============================================================
+
+PASTE INTO PAPER:
+The Wilcoxon signed-rank test confirmed that the proposed hormone-modulated KFQL (Mel=cos, Cor=car) achieves statistically significant energy savings compared to KFQL (none) (W = 55, z = 2.803, p < 0.001, r = 0.89), indicating a large effect size across all 10 independent seeds. All 10 seeds showed positive savings, with a mean reduction of 2.12 ± 0.20 kWh/day.
