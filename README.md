@@ -6,9 +6,7 @@
 **Journal:** IEEE Access, 2025  
 **Manuscript ID:** Access-2025-52365
 
-DOI
-[10.5281/zenodo.21510300](https://doi.org/10.5281/zenodo.21510321)
-
+DOI: 10.5281/zenodo.21510321 (https://doi.org/10.5281/zenodo.21510321)
 
 ## Repository Contents
 
