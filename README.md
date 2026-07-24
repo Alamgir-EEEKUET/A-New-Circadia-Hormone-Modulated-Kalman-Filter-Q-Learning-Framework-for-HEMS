@@ -3,8 +3,7 @@
 **Paper:** "A Circadian Hormone-Modulated Kalman Filter Q-Learning Framework for Home Energy Management Systems"  
 **Authors:** Md. Alamgir Hossain and Md. Shahjahan  
 **Affiliation:** Department of Electrical and Electronic Engineering, Khulna University of Engineering & Technology (KUET), Bangladesh  
-**Journal:** IEEE Access, 2025  
-**Manuscript ID:** Access-2025-52365
+
 
 DOI: 10.5281/zenodo.21510321 (https://doi.org/10.5281/zenodo.21510321)
 
